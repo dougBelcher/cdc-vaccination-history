@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '6 12 * * *'
+    - cron:  '6 * * * *'
 
 jobs:
   scheduled:
@@ -61,8 +61,8 @@ jobs:
         gcloud config set project datasette-222320
         datasette publish cloudrun cdc.db \
           --title "CDC vaccination numbers" \
-          --about "simonw/cdc-vaccination-history" \
-          --about_url "https://github.com/simonw/cdc-vaccination-history" \
+          --about "dougBelcher/cdc-vaccination-history" \
+          --about_url "https://github.com/dougBelcher/cdc-vaccination-history" \
           --source "CDC" \
           --source_url "https://covid.cdc.gov/covid-data-tracker/#vaccinations" \
           --install datasette-vega \
